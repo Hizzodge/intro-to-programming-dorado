@@ -14,6 +14,7 @@ const footer = document.querySelector('#footer');
 //Create a new paragraph (p) element and store it in a variable named copyright
 
 const copyright = document.createElement('p');
+copyright.className = "footer-name";
 
 //Set the inner HTML of your copyright element to display your name and the current year
 
@@ -33,7 +34,7 @@ const skillsSection = document.querySelector('#skills');
 
 //Using "DOM Selection", query the skillsSection (instead of the entire document) to find the <ul> element and store it in a variable named skillsList
 
- const skillsList = skillsSection.querySelector('ul');
+ const skillsList = skillsSection.querySelector('.skills-list');
 
  //Create a for loop to iterate over your skills Array, starting at index 0
 
@@ -65,6 +66,7 @@ messageForm.addEventListener('submit', event =>{
     console.log(userName);
     console.log(userEmail);
     console.log(message);
+    // messageSection.style.visibility = 'visible';
 
 
     //Using "DOM Selection", select the #messages section by id and store it in a variable named messageSection
@@ -86,17 +88,18 @@ messageForm.addEventListener('submit', event =>{
     // <span> element that displays the "message"
 
     // newMessage.setAttribute('href', 'mailto: r.filipe13@gmail.com');
-    newMessage.textContent =`${userName} wrote: ${message}`;
-    console.log('this needs to be fixed!! ',newMessage.hasAttribute('href'));
-    console.log('this needs to be fixed!! ',newMessage.getAttribute('href'));
-    //     newMessage.textContent = `<a  href = "mailto: ${userEmail}">${userName}</a> wrote: <span>${message}</span>`;
+    newMessage.innerHTML = `<a href=mailto: ${userEmail}></a>  wrote: ${message}`;
+    // `${userName} wrote: ${message}`;
+    // console.log('this needs to be fixed!! ',newMessage.hasAttribute('href'));
+    // console.log('this needs to be fixed!! ',newMessage.getAttribute('href'));
+        // newMessage.innerHTML = `<a  href = "mailto: ${userEmail}">${userName}</a> wrote: <span>${message}</span>`;
     // console.log(newMessage);
 
     // messageList.appendChild(newMessage);
 
     // Create a new <button> element and store it in a variable named removeButton
     const removeButton = document.createElement('button');
-
+    removeButton.className = "btn-remove";
     // Set the inner text to "remove"
     buttonText = document.createTextNode("remove");
     removeButton.appendChild(buttonText);
@@ -109,7 +112,12 @@ messageForm.addEventListener('submit', event =>{
     const entry = newMessage.parentNode;
     
     //Remove the entry element from the DOM
-    entry.remove();
+    // entry.remove();
+    newMessage.remove();
+
+    if(messageList.getElementsByTagName('li').length == 0) {
+        messageSection.style.visibility = 'hidden';
+    };
     });
 
     // Append the removeButton to the newMessage element
@@ -120,7 +128,7 @@ messageForm.addEventListener('submit', event =>{
 
     messageForm.reset();
 
-    //not working as disered
+    // not working as disered
     if (newMessage != null)
     {
         messageSection.style.visibility = 'visible';
