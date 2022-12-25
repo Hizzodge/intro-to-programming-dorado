@@ -5,76 +5,79 @@
         <meta name="description" content="My first web project">
         <meta name="keywords" content="HTML, CSS, JavaScript">
         <meta name="author" content="Ricardo dias">
+        <meta name="viewport" content="width=device-width, inicial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
-        <style>
-            img {
-                border-radius: 50%;
-                padding-left: 5px;
-            }
-            .selfie {
-                background-color:#a9b8b7;
-            }
-            body {
-                background-color: #edf0f0;
-                font-family: 'Roboto', sans-serif;
-            }
-            .icon {
-                margin: 2.5px;
-            }
-        </style>
+        <link rel="stylesheet" href="css/index.css">
+        <script src="https://kit.fontawesome.com/42703db917.js" crossorigin="anonymous"></script>
+
     </head>
     <body>
-        <section>
-            <div class="selfie">
-                <img src="./resources/Selfie.jpeg" alt="My Picture" width="140" height="140">
+        <header>
+            <div id="navbar">
+                <h2 class="nav-h2">Portfoli<span class="nav-portfolio">o</span></h2>
+                
+                <nav>
+                    <ul class="navbar">
+                        <li><a href="#about"><i class="fa-regular fa-user"></i></a></li>
+                        <li><a href="#experience"><i class="fa-regular fa-pen-to-square"></i></a></li>
+                        <li><a href="#skills"><i class="fa-solid fa-language"></i></a></li>
+                        <li><a href="#connect"><i class="fa-regular fa-comment"></i></a></li>
+                    </ul>
+                </nav>
             </div>
-            
-            <h2>About</h2>
-            <p>Hello, I'm Ricardo.<br>
-                Recently started my journey as a front-end developer.<br>
-                 I'm driven by my curiosity to explore and create new things.
-            </p>
+        </header>
+        <section id="about">
+            <div class="selfie">
+                <img class="profile-pic" src="./resources/Selfie.jpeg" alt="My Picture">
+            </div>
+            <div class="about-info">
+                <h2 class="about-h2">About &nbsp;<span class="nav-portfolio"> Me</span></h2>
+                <p> I'am Ricardo Dias,
+                    I am based out of Lisbon, Portugal. <br>
+                    Recently started my journey as a front-end developer with a data analyst and team management background. <br>
+                    I'm driven by my curiosity to explore and create new things.
+                </p>
+            </div> 
         </section>
-        <section>
-            <h2>Experience</h2>
-            <p>I am currently an junior front-end developer at
-                <a href="https://www.celfocus.com">Celfocus</a><br> Previously i worked as a consulting analyst within the Telco
+        <div class="workspace">
+        </div>
+        <section id="container">
+            <section id="experience">
+                <h2>Experience</h2>
+                <p>I am currently an junior front-end developer at
+                <a class="celfocus" href="https://www.celfocus.com" target="_blank">Celfocus</a><br> Previously i worked as a consulting analyst within the Telco
                 business.
-            </p>
-        </section>
-        <section id="skills">
-            <h2>skills</h2>
-            <ul>
+                </p>
+            </section>
+            <section id="skills" >
+                <h2>skills</h2>
+                <ul class="skills-list">
 
-            </ul>
+                </ul>
+            </section>
         </section>
-        <section>
-            <h2>Connect</h2>
-            <ul>
-                <a class="icon" href = "mailto: r.filipe13@gmail.com">
-                     <img src="./resources/mail.png" alt="email link" width="25" height="25"></a>
-                <a class="icon" href="https://github.com/Hizzodge">
-                     <img src="./resources/Github.png" alt="github link" width="28" height="28"></a>
-                <a class="icon" href=https://twitter.com/Richardouss> 
-                    <img src="./resources/Twitter.png" alt="twitter link" width="25" height="25"></a>
-            </ul>
-        </section>
-        <section>
+        <section id="contact">
             <h2>Leave a Message</h2>
-            <form action="" name="leave_message">
-                <label for="username">Name</label>
-                <br>
-                <input type="text" name="name" required>
-                <br>
-                <label for="useremail">Email Address</label>
-                <br>
-                <input type="email" name="email" required>
-                <br>
-                <label for="message">Message</label>
-                <br>
-                <textarea name="message"  cols="30" rows="10" required></textarea>
-                <br>
-                <button type="submit">Submit</button>
+            <form action="" name="leave_message" class="form">
+                <div>
+                    <div class="flex-container-form">
+                        <div class="form-ele">
+                            <label for="username">Name</label>
+                            <input type="text" name="name" required>
+                        </div>
+                        <div class="form-ele">
+                            <label for="useremail">Email Address</label>
+                            <input type="email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="form-ele">
+                        <label for="message">Message</label>
+                        <textarea name="message"  cols="46" rows="8" required></textarea>
+                    </div>
+                    <div class="form-ele">
+                        <button type="submit" class="btn">Submit</button>
+                    </div>
+                </div>
             </form>
         </section>
         <section id="messages">
@@ -84,7 +87,14 @@
               </ul>  
         </section>
         <footer id="footer">
-
+            <section id="connect">
+                <!-- <h2>Connect</h2> -->
+                <ul>
+                    <a class="icon" href="https://github.com/Hizzodge" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a class="icon" href="https://twitter.com/Richardouss" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                    <a class="icon" href="https://www.linkedin.com/in/rfdias" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                </ul>
+            </section>
         </footer>
         <script src="js/index.js"></script>
     </body>
