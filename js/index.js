@@ -81,14 +81,14 @@ messageForm.addEventListener('submit', event =>{
     //Create a new list item (li) element and store it in a variable named newMessage
 
     const newMessage = document.createElement('li');
-
+    newMessage.className = "input-message";
    
     //  On the next line, set the inner HTML of your newMessage element with the following information:
     // <a> element that displays the "name" and links to the "email" (hint: use the mailto: prefix)
     // <span> element that displays the "message"
 
-    // newMessage.setAttribute('href', 'mailto: r.filipe13@gmail.com');
-    newMessage.innerHTML = `<a href=mailto: ${userEmail}></a>  wrote: ${message}`;
+   
+    newMessage.innerHTML = `<a href=mailto: ${userEmail}>${userName}</a>  wrote: ${message}`;
     // `${userName} wrote: ${message}`;
     // console.log('this needs to be fixed!! ',newMessage.hasAttribute('href'));
     // console.log('this needs to be fixed!! ',newMessage.getAttribute('href'));
