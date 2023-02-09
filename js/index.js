@@ -139,46 +139,83 @@ messageForm.addEventListener('submit', event =>{
 
 });
 
-//Create a new XMLHttpRequest object and store it in a variable named githubRequest
+//lesson 6.1
+// //Create a new XMLHttpRequest object and store it in a variable named githubRequest
 
-let githubRequest = new XMLHttpRequest();
+// let githubRequest = new XMLHttpRequest();
 
-//Call the open method on your githubRequest object and pass the necessary arguments
-
-
-
-githubRequest.open('GET', 'https://api.github.com/users/Hizzodge/repos');
+// //Call the open method on your githubRequest object and pass the necessary arguments
 
 
 
-
-// githubRequest.open('GET', 'https://learnwebcode.github.io/json-example/animals-1.json', true);
-//Finally, call the send method on your githubRequest object to actually send the request
-
-githubRequest.send();
-console.log(githubRequest);
-
-githubRequest.addEventListener("load", function() {
-    const repositories = JSON.parse(githubRequest.responseText);
-    console.log(repositories);
+// githubRequest.open('GET', 'https://api.github.com/users/Hizzodge/repos');
 
 
-    // Using "DOM Selection", select the #projects section by id and store it in a variable named projectSection
+
+
+// // githubRequest.open('GET', 'https://learnwebcode.github.io/json-example/animals-1.json', true);
+// //Finally, call the send method on your githubRequest object to actually send the request
+
+// githubRequest.send();
+// console.log(githubRequest);
+
+// githubRequest.addEventListener("load", function() {
+//     const repositories = JSON.parse(githubRequest.responseText);
+//     console.log(repositories);
+
+
+//     // Using "DOM Selection", select the #projects section by id and store it in a variable named projectSection
+
+//     // const projectSection = document.getElementById('projects');
+
+//     // Using "DOM Selection", query the projectSection (instead of the entire document) to find the <ul> element and store it in a variable named projectList
+
+//     // const projectList = projectSection.querySelector('ul');
+ 
+//     //Create a for loop to iterate over your repositories Array, starting at index 0
+//     //Inside the loop, create a new list item (li) element and store it in a variable named project
+//     //set the inner text of your project variable to the current Array element's name property
+//     //append the project element to the projectList element
+    
+//     // for (i =0; 0 < repositories.length; i++) {
+//     //     const project = document.createElement('li');
+//     //     project.textContent = repositories[i].name + "  " + repositories[i].language;
+//     //     project.innerHTML = `<a href= ${repositories[i].html_url} target="_blank">${repositories[i].name}  ${repositories[i].language}</a>`;
+//     //     projectList.appendChild(project);
+//     // }
+// });
+
+
+
+
+//Lesson 6.2
+
+//Using the Fetch API, create a "GET" request to the same GitHub API url as before
+
+fetch('https://api.github.com/users/Hizzodge/repos', {mode: 'cors'})
+
+//Chain a then method to your fetch call and pass it a function that returns the response JSON data
+.then(function(response) {
+    return response.json();
+})
+//Chain another then method and pass it a function, inside of which you can paste the code from your previous "load" event listener function
+.then(function(response) {
+
     const projectSection = document.getElementById('projects');
 
-    // Using "DOM Selection", query the projectSection (instead of the entire document) to find the <ul> element and store it in a variable named projectList
-
     const projectList = projectSection.querySelector('ul');
- 
-    //Create a for loop to iterate over your repositories Array, starting at index 0
-    //Inside the loop, create a new list item (li) element and store it in a variable named project
-    //set the inner text of your project variable to the current Array element's name property
-    //append the project element to the projectList element
-    for (i =0; 0 < repositories.length; i++) {
+
+    for (i =0; 0 < response.length; i++) {
         const project = document.createElement('li');
-        project.textContent = repositories[i].name + "  " + repositories[i].language;
-        project.innerHTML = `<a href= ${repositories[i].html_url} target="_blank">${repositories[i].name}  ${repositories[i].language}</a>`;
+        project.textContent = response[i].name + "  " + response[i].language;
+        project.innerHTML = `<a href= ${response[i].html_url} target="_blank">${response[i].name}  ${response[i].language}</a>`;
         projectList.appendChild(project);
     }
-});
 
+})
+
+//Chain a catch() function to your fetch call to handle errors from the server
+.catch(function(error) {
+    console.log('There was an error', error);
+
+})
