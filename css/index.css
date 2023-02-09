@@ -108,16 +108,6 @@ body {
     white-space: normal; 
 }
 
-/* office picture */
-.workspace {
-    background: url('../resources/workspace.jpg') no-repeat center center/cover;
-    height: 130vh;
-    width: 100%;
-    position: relative;
-    color: #fff;
-    margin: 60px 0;
-
-}
 
 /* experience & container element */
 #container {
