@@ -26,7 +26,7 @@ footer.appendChild(copyright);
 
 //List your technical skills by creating an Array of String values and store it in a variable named skills
 
-let skills = ["HTML", "CSS", "JavaScript", "SQL", "React"];
+let skills = ["SQL", "GCP", "HTML", "CSS", "JavaScript", "Node.js", "React"];
 
 //Using "DOM Selection", select the #skills section by id and store it in a variable named skillsSection
 
@@ -90,13 +90,6 @@ messageForm.addEventListener('submit', event =>{
 
    
     newMessage.innerHTML = `<a href=mailto: ${userEmail}>${userName}</a>  wrote: ${message}`;
-    // `${userName} wrote: ${message}`;
-    // console.log('this needs to be fixed!! ',newMessage.hasAttribute('href'));
-    // console.log('this needs to be fixed!! ',newMessage.getAttribute('href'));
-        // newMessage.innerHTML = `<a  href = "mailto: ${userEmail}">${userName}</a> wrote: <span>${message}</span>`;
-    // console.log(newMessage);
-
-    // messageList.appendChild(newMessage);
 
     // Create a new <button> element and store it in a variable named removeButton
     const removeButton = document.createElement('button');
@@ -113,7 +106,6 @@ messageForm.addEventListener('submit', event =>{
     const entry = newMessage.parentNode;
     
     //Remove the entry element from the DOM
-    // entry.remove();
     newMessage.remove();
 
     if(messageList.getElementsByTagName('li').length == 0) {
@@ -138,54 +130,6 @@ messageForm.addEventListener('submit', event =>{
     };
 
 });
-
-//lesson 6.1
-// //Create a new XMLHttpRequest object and store it in a variable named githubRequest
-
-// let githubRequest = new XMLHttpRequest();
-
-// //Call the open method on your githubRequest object and pass the necessary arguments
-
-
-
-// githubRequest.open('GET', 'https://api.github.com/users/Hizzodge/repos');
-
-
-
-
-// // githubRequest.open('GET', 'https://learnwebcode.github.io/json-example/animals-1.json', true);
-// //Finally, call the send method on your githubRequest object to actually send the request
-
-// githubRequest.send();
-// console.log(githubRequest);
-
-// githubRequest.addEventListener("load", function() {
-//     const repositories = JSON.parse(githubRequest.responseText);
-//     console.log(repositories);
-
-
-//     // Using "DOM Selection", select the #projects section by id and store it in a variable named projectSection
-
-//     // const projectSection = document.getElementById('projects');
-
-//     // Using "DOM Selection", query the projectSection (instead of the entire document) to find the <ul> element and store it in a variable named projectList
-
-//     // const projectList = projectSection.querySelector('ul');
- 
-//     //Create a for loop to iterate over your repositories Array, starting at index 0
-//     //Inside the loop, create a new list item (li) element and store it in a variable named project
-//     //set the inner text of your project variable to the current Array element's name property
-//     //append the project element to the projectList element
-    
-//     // for (i =0; 0 < repositories.length; i++) {
-//     //     const project = document.createElement('li');
-//     //     project.textContent = repositories[i].name + "  " + repositories[i].language;
-//     //     project.innerHTML = `<a href= ${repositories[i].html_url} target="_blank">${repositories[i].name}  ${repositories[i].language}</a>`;
-//     //     projectList.appendChild(project);
-//     // }
-// });
-
-
 
 
 //Lesson 6.2

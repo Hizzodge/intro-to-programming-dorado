@@ -1,18 +1,16 @@
 /* font family from Google Fonts */
 body {
-    /* background-color: #edf0f0; */
     font-family: 'Roboto', sans-serif;
     line-height: 2;
     font-size: 18px;
-    font-weight: 600;
+    font-weight: 800;
     color: #0a191e;
-    margin: 0;
+    margin: 0 auto;
     box-sizing: border-box;
+    max-width: 1200px;
+    background-color: #f8f8f8;
 }
-/* section {
-    padding: 15px; 
-    margin: 10px;
- } */
+
  section h2 {
      font-weight: 900;
      font-size: 26px;
@@ -22,7 +20,6 @@ body {
  
 
 #navbar {
-    /* background: #b8cfda; */
     align-items: center;
     justify-content: space-between;
     overflow: auto;
@@ -30,6 +27,7 @@ body {
     font-weight: 800;
     padding: 0px;
     display: flex;
+
 }
 /* navbar  */
 #navbar a {
@@ -49,7 +47,6 @@ body {
     color: #08c5c8;
 }
 .nav-h2 {
-    margin-left: 30px;
     font-size: 30px;
     flex: right;
 }
@@ -58,13 +55,12 @@ body {
     color: #08c5c8;
 }
 
-
 /* Profile pic & about info */
 #about {
     display: flex;
     flex: 1;
-    height: 40vh;
-    /* width: 100%; */
+    height: 30vh;
+    margin-top: 50px;
 }
 
 .selfie {
@@ -72,31 +68,26 @@ body {
    width: 100%;
     align-items: center;
     padding: 20px;
-    margin: 30px;
+    margin-right: 60px;
     justify-content: center;
     
 }
 .selfie img {
     border-radius: 10px;
-    max-width: 500px;
-    max-height: 500px;
+    max-width: 400px;
+    max-height: 400px;
     object-fit: center;
     opacity: 0.9; 
 }
 
 .about-info .about-h2 {
-    margin-bottom: 60px;
-    width: 50%;
+    margin-bottom: 20px;
     text-align: center;
-    
-    /* display: flex; */
 }
 .about-info p { 
     padding: 15px;
     line-height: 2;
     max-width: 500px;
-    height: 100%;
-    
 }
 
 .about-info {
@@ -108,87 +99,98 @@ body {
     white-space: normal; 
 }
 
-
 /* experience & container element */
-#container {
-    display: flex;
-    height: 40vh;
-    flex: 1;
-    /* flex-direction: row; */
-    /* margin: 60px 30px; */
-    justify-content: space-around;
-}
-
 #experience {
-    
-    padding: 30px;
-    justify-content: center;
-    
+    justify-content: center; 
+    height: 25vh;  
 }
 #experience h2 {
-    margin-bottom: 60px;
+    margin-bottom: 30px;
 }
-#experience p {
-    justify-content: center;
-    
+#experience ul li {
+    list-style: none;
+    padding: 10px;
 }
-#experience .celfocus {
-    text-decoration: none;
-    font-weight: 900;
-    color: #08c5c8;
-
+#experience ul {
+   padding: 0;
 }
-
+#experience ul li div{
+    display: flex;
+    justify-content: space-between;
+}
+#experience  .strong {
+    font-weight: bolder;
+    color: #0a191e;
+}
+#experience span {
+    color: #6f7579;
+}
 #skills {
-    /* justify-content: center; */
+    height: 15vh;
 }
 #skills ul {
     list-style: none; 
-    display: flex; 
-}
-#skills h2 {
-   text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 #skills li {
    display: block;
-   padding: 15px 15px;
+   padding: 10px 25px;
    font-weight: 700;
    border-radius: 5px;
    margin: 20px;
+   border: 2px solid #fff;
+   color: #08c5c8;
 
 }
-#skills li:hover {
-   background-color: #acb4b0;
-   color: #fff;
+.skills-list {
+    padding: 0;
 }
-
+#projects {
+    height: 22vh;
+}
+#projects ul {
+    list-style: none;  
+    padding: 0;
+}
+#projects li {
+    padding: 10px;
+    background-color:#e4e2e1;
+    margin-bottom: 9px;
+    opacity: 0.8;
+}
+#projects li a {
+    text-decoration: none;
+    color: #011819;
+}
+#projects li:hover{
+    border: 1px solid #08c5c8;;
+}
+#projects li a:hover {
+    color: #08c5c8;
+    font-size: 20px;
+}
 /* form */
 #contact {
-    width: 50%;
-    /* display: block; */
+    width: 60%;
+    height: 40vh;
 }
-#contact h2 {
-    /* width: 50%; */
-    /* text-align: center; */
-    margin: 30px 20px;
-    padding: 20px;
- }
- 
-/* Add spacing (padding/margin) between sections */
+
 
 .flex-container-form {
+    box-sizing: border-box;
     display: flex;
-    margin: 60px 15px 25px ;
+    flex-direction: row;
     width: 100%;
 }
 .form-ele {
-    flex: 1;
-    /* width: 100%; */
-    margin: 20px ;
-    padding: 10px;
-    justify-content: space-evenly;
-    width: 250px;
+    flex: auto;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+    padding-right: 10px;
 }
 .form-ele label {
     display: block;
@@ -197,10 +199,14 @@ body {
 }
 
 .form-ele input {
-    width: 300px;
-    padding: 4px;
+    width: 80%;
+    padding: 5px;
     height: 30px;
+    margin-right: 10px;
     border: #f5f5f5 2px solid
+}
+#contact textarea {
+    width: 50%;
 }
 .form-ele input:focus, textarea:focus {
     outline-color: #a9b8b7;
@@ -210,17 +216,17 @@ body {
     font-size: 18px;
     color: #fff;
     background: #08c5c8;
-    padding: 13px 20px;
+    padding: 13px 0px;
     border: none;
     cursor: pointer;
     border-radius: 5px;
-    margin: 10px;
+    margin-top: 20px;
     width: 150px;
+    opacity: 0.7;
 }
 /* submit button  */
 .btn:hover {
-    opacity: 0.9;
-    background-color: #28a745;
+    opacity: 1;
 }
 .btn-outline, .btn-remove-outline  {
     background: transparent;
@@ -228,18 +234,14 @@ body {
 }
 
 /* Messages */
-#messages h2 {
-    width: 50%;
-    margin: 0px 30px;
-    padding: 20px;
-}
+
 #messages ul {
     list-style: none;
-
+    padding: 0;
 } 
 #messages  li {
     display: block;
-    padding: 10px;
+    /* padding: 10px; */
     font-weight: 500;
     border-radius: 5px;
     margin: 0px;
@@ -256,7 +258,7 @@ body {
     font-size: 16px;
     color: #fff;
     background: #a9b8b7;
-    padding: 3px;
+    padding: 7px;
     border: none;
     cursor: pointer;
     border-radius: 5px;
@@ -266,7 +268,6 @@ body {
     background: #161718;
 }
 #messages .input-message a {
-
     text-decoration: none;
 }
 
@@ -279,14 +280,10 @@ body {
     flex-direction: row-reverse;
     align-items: center;
     justify-content: space-between;
-    background: #a9b8b7;
-    /* overflow: auto; */
-    width: 100%;
+    background-color: #a9b8b7;
     height: 60px;
-    text-align: center;
-    
+    text-align: center; 
 }
-
 #connect a {
     margin-right: 30px;
     text-decoration: none; 
@@ -301,14 +298,12 @@ body {
         position: relative;
         width: 100%;
         justify-content: center;
-        /* flex: none; */
         background: #b8cfda; 
         align-items: center;
         overflow: auto;
         border-radius: 0px;
-        font-weight: 800;
         padding: 0px;
-        margin-bottom: 0px;
+        margin: 0px;
     }
     #navbar li a:hover, #navbar li a.current {
         color: #fff;
@@ -321,17 +316,15 @@ body {
         padding: 10px 10px;
         margin: auto;
     } 
+
     #about {
         display: block;
-        height: 100%;   
+        height: 100%; 
+        margin-top: 0;  
     }
     .selfie {
-   
-        /* width: 100%; */
-
          padding: 0px;
-         margin: 0px;
-         
+         margin: 0px;   
      }
      .selfie img {
          border-radius: 0px;
@@ -348,65 +341,47 @@ body {
         
     }
     .about-info .about-h2 {
-        margin: 50px 0;
+        margin: 20px 0;
         width: 100%;
         text-align: center;
-        
-        /* display: flex; */
     }
     .about-info {
         display:block;
         padding: 15px;
         margin-left: 0px;
         width: 100%;
-        height: 100%;
+        height: 25vh;
         white-space: normal;
         text-align: center; 
     }
-    .workspace {
-        display: none;
-    }
-    #container {
-        display: block;
-        height: 100%;
-    }
     #experience {
-    
         padding: 30px;
         justify-content: center;
-        margin-top: 10px;
-        
+        margin-top: 0px;
+        height: auto;   
     }
     #experience h2 {
-        margin: 50px 0;
+        margin: 50px 0 20px;
         text-align: center;
     }
-    #experience p {
-        /* justify-content: center; */
-        text-align: center;
+    #experience li div {
+        flex-direction: column;
         
     }
-    #experience .celfocus {
-        text-decoration: none;
-        font-weight: 900;
-        color: #08c5c8;
+    
+    #skills {
+        height: auto;
     }
-    /* #skills {
-        justify-content: start;
-    } */
     #skills ul {
         list-style: none; 
         display: block;
-
-        /* background-color: #b8cfda; */
     }
     #skills h2 {
-       /* text-align: center; */
-       /* margin: 20px; */
+       text-align: center;
+       margin-top: 10px;
     }
     
     #skills li {
-       /* display: block; */
        padding: 5px;
        font-weight: 700;
        border-radius: 5px;
@@ -414,11 +389,7 @@ body {
        text-align: center;
        box-shadow: inset 0 0 0 0 #54b3d6;
        color: #54b3d6;
-
-        transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
-       /* width: 100%; */
-       /* background-color: #b8cfda; */
-    
+        transition: color .3s ease-in-out, box-shadow .4s ease-in-out;
     }
     #skills li:hover {
        color: #fff;
@@ -429,11 +400,17 @@ body {
     .skills-list {
         padding: 0;
     }
+   
+    #projects h2 {
+        text-align: center;
+    }
+
     #contact {
         width: 100%;
-        /* display: block; */
+        display: block;
         background-color: 
         #ebf3f7;
+        height: auto;
     }
     #contact h2 {
         text-align: center;
@@ -443,21 +420,19 @@ body {
         width: 100%;
      }
      
-    /* Add spacing (padding/margin) between sections */
-    
     .flex-container-form {
         display: block;
         margin: 0;
         width: 100%;
     }
     .form-ele {
-        /* flex: 1; */
-        width: 100%;
+        width: 90%;
         margin: 0px ;
         padding: 10px;
-        justify-content: space-evenly;
+
         text-align: center;
-        /* width: 250px; */
+        margin: auto;
+
     }
     .form-ele label {
         text-align: center;
@@ -472,10 +447,7 @@ body {
         height: 30px;
         border: #f5f5f5 2px solid
     }
-    textarea {
-        width: 100%;
-        border: #f5f5f5 2px solid
-    }
+   
     .form-ele .btn {
         align-items: center;
 
@@ -488,17 +460,12 @@ body {
         padding: 0;
         margin-bottom: 15px;
         display: block;
-        /* flex-direction: row-reverse; */
         align-items: center;
-        /* justify-content: space-between; */
         background: #fff;
-        /* overflow: auto; */
         width: 100%;
         height: 40px;
         text-align: center;
-        
     }
-    
     #connect a {
         margin-right: 30px;
         text-decoration: none; 
